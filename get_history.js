@@ -1,28 +1,26 @@
-// Variáveis de status
 let popularity = 50;
 let influence = 50;
 let military = 50;
 let wealth = 50;
 
-// Capítulos e finais carregados do JSON
 let chapters = {};
 let endings = {};
 let visitedChapters = [];  // Armazenar os capítulos já visitados
 let unlockedEndings = [];  // Armazenar os finais já desbloqueados
 
-// Função para carregar os capítulos e finais do JSON
+
 function loadChapters() {
-    fetch('history.json')  // Certifique-se que o JSON esteja na mesma pasta do script
+    fetch('history.json') 
         .then(response => response.json())
         .then(data => {
-            chapters = data.chapters;  // Guardando os capítulos carregados do JSON
-            endings = data.endings;  // Guardando os finais carregados do JSON
-            loadChapter(1);  // Inicia o jogo no capítulo 1
+            chapters = data.chapters;  
+            endings = data.endings;  
+            loadChapter(1);  
         })
         .catch(error => console.error('Erro ao carregar o JSON:', error));
 }
 
-// Função para atualizar os status
+
 function updateStats(effects) {
     if (effects.popularity) {
         popularity = Math.min(Math.max(popularity + effects.popularity, 0), 100);
@@ -37,14 +35,14 @@ function updateStats(effects) {
         wealth = Math.min(Math.max(wealth + effects.wealth, 0), 100);
     }
 
-    // Atualizando os valores de status na interface
+    
     document.getElementById('popularity').innerText = popularity;
     document.getElementById('influence').innerText = influence;
     document.getElementById('military').innerText = military;
     document.getElementById('wealth').innerText = wealth;
 }
 
-// Função para mostrar o final com base na pontuação e exibir o botão "Jogar Novamente"
+
 function showEnding() {
     let finalEnding;
 
@@ -60,60 +58,54 @@ function showEnding() {
         finalEnding = endings.find(end => end.id === 6);  // Fim para um comércio legalizado
     }
 
-    // Verificar se o final já foi desbloqueado
+
     if (!unlockedEndings.includes(finalEnding.id)) {
-        unlockedEndings.push(finalEnding.id);  // Adicionar à lista de finais desbloqueados
-        updateUnlockedEndings();  // Atualizar a exibição dos finais desbloqueados
+        unlockedEndings.push(finalEnding.id);  
+        updateUnlockedEndings(); 
     }
 
-    // Exibir o final na tela
     document.getElementById('chapterTitle').innerText = finalEnding.title;
     document.getElementById('chapterText').innerText = finalEnding.text;
-    document.getElementById('choices').innerHTML = '';  // Limpar as escolhas após o final
+    document.getElementById('choices').innerHTML = '';  
 
-    // Adicionar o botão "Jogar Novamente"
     const playAgainButton = document.createElement('button');
     playAgainButton.innerText = "Jogar Novamente";
-    playAgainButton.onclick = resetGame;  // Chama a função para reiniciar o jogo
+    playAgainButton.onclick = resetGame;  
     document.getElementById('choices').appendChild(playAgainButton);
 }
 
-// Função para carregar o capítulo
 function loadChapter(chapterId) {
-    // Verifica se o capítulo já foi visitado
     if (visitedChapters.includes(chapterId)) {
-        showEnding();  // Se já foi visitado, mostrar o ending
+        showEnding();  
         return;
     }
     
-    visitedChapters.push(chapterId);  // Adiciona o capítulo ao histórico de visitados
-    const chapter = chapters.find(chap => chap.id === chapterId);  // Encontrar o capítulo pelo ID
+    visitedChapters.push(chapterId);  
+    const chapter = chapters.find(chap => chap.id === chapterId);  
     document.getElementById('chapterTitle').innerText = chapter.title;
     document.getElementById('chapterText').innerText = chapter.text;
 
     const choicesDiv = document.getElementById('choices');
-    choicesDiv.innerHTML = '';  // Limpar as escolhas anteriores
+    choicesDiv.innerHTML = '';  
 
     chapter.choices.forEach(choice => {
         const button = document.createElement('button');
         button.innerText = choice.text;
         button.onclick = () => {
-            // Verifica se o próximo capítulo já foi visitado
             if (visitedChapters.includes(choice.nextChapter)) {
-                showEnding();  // Se o próximo capítulo já foi visitado, mostrar o ending
+                showEnding();  
             } else {
-                updateStats(choice.effects);  // Atualizar os status com base nos efeitos
-                loadChapter(choice.nextChapter);  // Carregar o próximo capítulo
+                updateStats(choice.effects);  
+                loadChapter(choice.nextChapter);  
             }
         };
         choicesDiv.appendChild(button);
     });
 }
 
-// Função para atualizar a lista de finais desbloqueados na aba "Finais Desbloqueados"
 function updateUnlockedEndings() {
     const unlockedEndingsDiv = document.getElementById('unlockedEndings');
-    unlockedEndingsDiv.innerHTML = '';  // Limpa a lista de finais desbloqueados
+    unlockedEndingsDiv.innerHTML = '';  
 
     unlockedEndings.forEach(endingId => {
         const ending = endings.find(end => end.id === endingId);
@@ -123,24 +115,20 @@ function updateUnlockedEndings() {
     });
 }
 
-// Função para reiniciar o jogo e os status
 function resetGame() {
     popularity = 50;
     influence = 50;
     military = 50;
     wealth = 50;
-    visitedChapters = [];  // Resetar capítulos visitados
+    visitedChapters = [];  
 
-    // Resetar os valores de status na interface
     document.getElementById('popularity').innerText = popularity;
     document.getElementById('influence').innerText = influence;
     document.getElementById('military').innerText = military;
     document.getElementById('wealth').innerText = wealth;
 
-    loadChapter(1);  // Recomeçar do capítulo 1
+    loadChapter(1); 
 }
-
-// Inicializar o jogo ao carregar a página
 window.onload = () => {
-    loadChapters();  // Carregar os capítulos do JSON
+    loadChapters(); 
 };
