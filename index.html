@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Aventura do Príncipe de Florença</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="game">
+
+        <!-- Tela de início -->
+        <div id="startScreen">
+            <h1 id="gameTitle">A Aventura do Príncipe de Florença</h1>
+            <p id="gameDescription">Você é Lorenzo, um jovem príncipe que acaba de assumir o poder de Florença, um pequeno principado no coração da Itália Renascentista.</p>
+            <p id="gameConcepts">A história de Lorenzo é inspirada pelos conceitos centrais da obra 'O Príncipe', de Nicolau Maquiavel. Entre os principais conceitos explorados estão a necessidade de manter o equilíbrio entre ser amado, respeitado e temido, e as decisões que moldarão seu legado como governante.</p>
+            <button id="startButton" onclick="startGame()">Start</button>
+        </div>
+
+        <!-- Abas de navegação (serão ocultas até o jogo começar) -->
+        <div id="tabs" style="display: none;">
+            <div class="tab">
+                <button class="tablinks" onclick="openTab(event, 'storyTab')" id="defaultOpen">História</button>
+                <button class="tablinks" onclick="openTab(event, 'endingsTab')">Finais Desbloqueados</button>
+            </div>
+
+            <!-- Conteúdo da aba História -->
+            <div id="storyTab" class="tabcontent">
+                <div id="status">
+                    <p><strong>Popularidade:</strong> <span id="popularity">50</span>/100</p>
+                    <p><strong>Influência Política:</strong> <span id="influence">50</span>/100</p>
+                    <p><strong>Força Militar:</strong> <span id="military">50</span>/100</p>
+                    <p><strong>Riqueza:</strong> <span id="wealth">50</span>/100</p>
+                </div>
+                <div id="story">
+                    <h2 id="chapterTitle"></h2>
+                    <p id="chapterText"></p>
+                    <div id="choices"></div>
+                </div>
+            </div>
+
+            <!-- Conteúdo da aba Finais Desbloqueados -->
+            <div id="endingsTab" class="tabcontent">
+                <h2>Finais Desbloqueados</h2>
+                <div id="unlockedEndings">
+                    <!-- Finais desbloqueados serão listados aqui -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="abas.js"></script>
+    <script src="get_history.js"></script>
+</body>
+</html>
