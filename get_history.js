@@ -52,11 +52,13 @@ function showEnding() {
         finalEnding = endings.find(end => end.id === 2);  // Fim para um regime de ferro com força militar
     } else if (influence > 50) {
         finalEnding = endings.find(end => end.id === 3);  // Fim para alguém que desmantelou conspirações
+    } else if (military > 50 && wealth > 50) {
+        finalEnding = endings.find(end => end.id === 4);  // Fim para uma era de expansão econômica e militar (Exemplo de final 4)
     } else if (popularity < 50 && wealth > 70) {
         finalEnding = endings.find(end => end.id === 5);  // Fim com riquezas sombrias
     } else {
         finalEnding = endings.find(end => end.id === 6);  // Fim para um comércio legalizado
-    }
+    }    
 
 
     if (!unlockedEndings.includes(finalEnding.id)) {
