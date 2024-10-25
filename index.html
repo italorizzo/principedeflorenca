@@ -27,11 +27,41 @@
             <!-- Conteúdo da aba História -->
             <div id="storyTab" class="tabcontent">
                 <div id="status">
-                    <p><strong>Popularidade:</strong> <span id="popularity">50</span>/100</p>
-                    <p><strong>Influência Política:</strong> <span id="influence">50</span>/100</p>
-                    <p><strong>Força Militar:</strong> <span id="military">50</span>/100</p>
-                    <p><strong>Riqueza:</strong> <span id="wealth">50</span>/100</p>
+                    <!-- Barras de progresso para as métricas -->
+                    <div class="stats">
+                        <div class="stat-label">Popularidade:</div>
+                        <div id="popularity-bar" class="stat-bar">
+                            <div class="stat-bar-inner" style="width: 50%;"></div>
+                        </div>
+                        <div class="stat-value" id="popularity">50</div>
+                    </div>
+                    
+                    <div class="stats">
+                        <div class="stat-label">Influência Política:</div>
+                        <div id="influence-bar" class="stat-bar">
+                            <div class="stat-bar-inner" style="width: 50%;"></div>
+                        </div>
+                        <div class="stat-value" id="influence">50</div>
+                    </div>
+                    
+                    <div class="stats">
+                        <div class="stat-label">Força Militar:</div>
+                        <div id="military-bar" class="stat-bar">
+                            <div class="stat-bar-inner" style="width: 50%;"></div>
+                        </div>
+                        <div class="stat-value" id="military">50</div>
+                    </div>
+                    
+                    <div class="stats">
+                        <div class="stat-label">Riqueza:</div>
+                        <div id="wealth-bar" class="stat-bar">
+                            <div class="stat-bar-inner" style="width: 50%;"></div>
+                        </div>
+                        <div class="stat-value" id="wealth">50</div>
+                    </div>
+                    
                 </div>
+
                 <div id="story">
                     <h2 id="chapterTitle"></h2>
                     <p id="chapterText"></p>

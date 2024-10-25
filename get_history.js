@@ -7,6 +7,7 @@ let chapters = {};
 let endings = {};
 let visitedChapters = [];  // Armazenar os capítulos já visitados
 let unlockedEndings = [];  // Armazenar os finais já desbloqueados
+let currentChapter = 1;  // Variável para controlar o capítulo atual
 
 // Carregar os capítulos do JSON
 function loadChapters() {
@@ -15,7 +16,7 @@ function loadChapters() {
         .then(data => {
             chapters = data.chapters;  
             endings = data.endings;  
-            loadChapter(1);  // Iniciar no capítulo 1
+            loadChapter(currentChapter);  // Iniciar no capítulo atual
         })
         .catch(error => console.error('Erro ao carregar o JSON:', error));
 }
@@ -40,6 +41,11 @@ function updateStats(effects) {
     document.getElementById('influence').innerText = influence;
     document.getElementById('military').innerText = military;
     document.getElementById('wealth').innerText = wealth;
+
+    document.querySelector('#popularity-bar .stat-bar-inner').style.width = popularity + '%';
+    document.querySelector('#influence-bar .stat-bar-inner').style.width = influence + '%';
+    document.querySelector('#military-bar .stat-bar-inner').style.width = military + '%';
+    document.querySelector('#wealth-bar .stat-bar-inner').style.width = wealth + '%';
 }
 
 // Verificar e mostrar o final desbloqueado
@@ -57,11 +63,44 @@ function showEnding() {
     document.getElementById('chapterText').innerText = finalEnding.text;
     document.getElementById('choices').innerHTML = '';  
 
-    // Adicionar o botão "Jogar Novamente"
-    const playAgainButton = document.createElement('button');
-    playAgainButton.innerText = "Jogar Novamente";
-    playAgainButton.onclick = resetGame;  
-    document.getElementById('choices').appendChild(playAgainButton);
+    // Verificar se todos os finais foram desbloqueados
+    if (unlockedEndings.length === endings.length) {
+        // Se todos os finais foram desbloqueados, mostrar a tela de fim de jogo
+        const endGameButton = document.createElement('button');
+        endGameButton.innerText = "Fim do Jogo";
+        endGameButton.onclick = showEndScreen;  // Mostrar tela de fim de jogo
+        document.getElementById('choices').appendChild(endGameButton);
+    } else {
+        // Adicionar o botão "Jogar Novamente" ou "Continuar"
+        const playAgainButton = document.createElement('button');
+        playAgainButton.innerText = "Jogar Novamente";
+        playAgainButton.onclick = resetGame;  
+        document.getElementById('choices').appendChild(playAgainButton);
+    }
+}
+
+// Mostrar a tela de fim de jogo
+function showEndScreen() {
+    document.getElementById('tabs').style.display = 'none';  // Esconder as abas do jogo
+    const gameOverDiv = document.createElement('div');
+    gameOverDiv.id = 'endScreen';
+    gameOverDiv.innerHTML = `
+        <h2>Parabéns!</h2>
+        <p>Você desbloqueou todos os finais de Lorenzo.</p>
+        <p>Ao longo da jornada, você tomou decisões que moldaram o destino de Florença e seu príncipe, Lorenzo. Cada escolha representou um equilíbrio entre poder, responsabilidade e compaixão, refletindo os desafios enfrentados por governantes de todos os tempos.</p>
+        <h3>Sobre os Finais:</h3>
+        <ul>
+            <li><strong>O Regime de Ferro</strong>: Um final onde Lorenzo decidiu manter o poder absoluto, sacrificando a paz e a satisfação popular para garantir a ordem e a força militar.</li>
+            <li><strong>A Revolução Vitoriosa</strong>: Um final que representou a escolha de Lorenzo por compartilhar o poder e promover o bem-estar geral, com Florença prosperando graças ao apoio popular.</li>
+            <li><strong>Conspiração Desmantelada</strong>: Um final onde Lorenzo, com sua habilidade política, desmantelou conspirações e manteve a ordem interna, demonstrando sua habilidade para lidar com ameaças ao seu governo.</li>
+            <li><strong>A Era da Expansão</strong>: Um final de equilíbrio entre força militar e prosperidade econômica, onde Florença se tornou um centro de poder e respeito na região, temida por seus inimigos e respeitada por seus aliados.</li>
+            <li><strong>Riqueza Sombria</strong>: Um final em que Lorenzo escolheu priorizar as riquezas de Florença, mas ao custo de alianças duvidosas e um futuro incerto para o principado.</li>
+            <li><strong>Comércio Legalizado</strong>: Um final onde Lorenzo abandonou o controle sobre o mercado negro, optando por uma Florença mais justa e segura através da legalização do comércio.</li>
+        </ul>
+        <p>Agradecemos por jogar <strong>A Aventura do Príncipe de Florença</strong>. Suas escolhas trouxeram à tona os dilemas da liderança e mostraram como o poder pode moldar o destino de um governante e de seu povo. Esperamos que tenha gostado da experiência!</p>
+        <button onclick="location.reload()">Jogar Novamente</button>
+    `;
+    document.body.appendChild(gameOverDiv);
 }
 
 // Função para determinar o final baseado nas pontuações
@@ -102,6 +141,7 @@ function getNextAvailableEnding(endId) {
 
 // Carregar o capítulo com base no ID fornecido
 function loadChapter(chapterId) {
+    currentChapter = chapterId;  // Atualizar o capítulo atual
     if (visitedChapters.includes(chapterId)) {
         showEnding();  // Mostrar final se o capítulo já foi visitado
         return;
@@ -158,12 +198,20 @@ function resetGame() {
     military = 50;
     wealth = 50;
     visitedChapters = [];  // Resetar capítulos visitados
+    currentChapter = 1;  // Resetar o capítulo atual
 
     document.getElementById('popularity').innerText = popularity;
     document.getElementById('influence').innerText = influence;
     document.getElementById('military').innerText = military;
     document.getElementById('wealth').innerText = wealth;
 
+    document.querySelector('#popularity-bar .stat-bar-inner').style.width = popularity + '%';
+    document.querySelector('#influence-bar .stat-bar-inner').style.width = influence + '%';
+    document.querySelector('#military-bar .stat-bar-inner').style.width = military + '%';
+    document.querySelector('#wealth-bar .stat-bar-inner').style.width = wealth + '%';
+
+    document.getElementById('endScreen')?.remove();  // Remover a tela de fim de jogo
+    document.getElementById('tabs').style.display = 'block';  // Mostrar as abas do jogo
     loadChapter(1);  // Recarregar o primeiro capítulo
 }
 
@@ -171,3 +219,31 @@ function resetGame() {
 window.onload = () => {
     loadChapters(); 
 };
+
+// Alternar entre abas
+function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+
+    // Ocultar todo o conteúdo das abas
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Remover a classe 'active' de todos os botões de abas
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Mostrar o conteúdo da aba atual e adicionar a classe 'active' ao botão que abriu a aba
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Função para iniciar o jogo
+function startGame() {
+    document.getElementById("startScreen").style.display = "none";  // Esconder tela de início
+    document.getElementById("tabs").style.display = "block";  // Mostrar as abas do jogo
+    document.getElementById("defaultOpen").click();  // Abrir a aba 'História' por padrão
+}

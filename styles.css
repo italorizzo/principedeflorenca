@@ -1,72 +1,333 @@
+/* Estilo para o fundo da página */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Georgia', serif;
+    background-image: url('./img/fundo.webp'); /* Substitua pelo caminho da sua imagem */
+    background-size: cover;
+    background-position: center; /* Centraliza a imagem de fundo */
     color: #333;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+/* Container principal do jogo */
 #game {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
+    max-width: 900px; /* Define uma largura máxima adequada */
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.95); /* Leve transparência */
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    border: 2px solid #d4a373; /* Borda elegante e simples */
+}
+
+/* Tela inicial */
+#startScreen {
+    padding: 0; /* Remove qualquer padding desnecessário */
+    margin: 0 auto; /* Centraliza */
+    text-align: center; /* Centralizar o texto */
+}
+
+/* Ajuste no título do jogo */
+#gameTitle {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #8b4513; /* Tom renascentista para o título */
+    margin-bottom: 20px; /* Espaçamento adequado */
+}
+
+/* Ajuste na descrição do jogo */
+#gameDescription, #gameConcepts {
+    font-size: 1.4rem;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+/* Estilo para o botão de iniciar */
+#startButton {
+    background-color: #8b4513;
+    color: white;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px; /* Espaçamento em cima do botão */
+}
+
+#startButton:hover {
+    background-color: #a0522d;
+}
+/* Estilos para os parágrafos */
+p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* Barras de progresso minimalistas */
+/* Estilo geral do container das métricas */
+.stats {
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.stat-label {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #444;
+    margin-right: 10px;
+    min-width: 150px;
+    text-align: left;
+}
+
+.stat-bar {
+    background-color: #e0e0e0;
+    border-radius: 6px;
+    overflow: hidden;
+    height: 10px; /* Reduzir a altura da barra */
+    width: 80%; /* Definir o tamanho da barra em porcentagem */
+    margin-right: 10px;
+}
+
+#status {
+    margin: 40px 0 80px 0 ;
+}
+
+.stat-bar-inner {
+    height: 100%;
+    border-radius: 6px;
+    transition: width 0.4s ease;
+}
+
+#popularity-bar .stat-bar-inner {
+    background-color: #c44a3d;
+}
+
+#influence-bar .stat-bar-inner {
+    background-color: #d6a02b;
+}
+
+#military-bar .stat-bar-inner {
+    background-color: #4ca86c;
+}
+
+#wealth-bar .stat-bar-inner {
+    background-color: #8f63b1;
+}
+
+/* Estilo para o valor das métricas */
+.stat-value {
+    font-size: 1rem;
+    color: #444;
+    text-align: right;
+    min-width: 40px;
+}
+
+
+/* Estilos para os botões de escolha */
+#choices {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+#choices button {
+    flex: 1;
+    padding: 12px;
+    background-color: #6c4a2d;
+    color: white;
+    border: none;
     border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+#choices button:hover {
+    background-color: #a0603f;
+}
+
+/* Estilos do conteúdo da história */
+#story {
+    margin-top: 20px;
+}
+
+#chapterTitle {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #6c4a2d;
+    margin-bottom: 10px;
+}
+
+#chapterText {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 20px;
+    text-align: justify;
 }
 
 /* Estilos para as abas */
 .tab {
-    overflow: hidden;
-    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
 }
 
 .tab button {
-    background-color: #f4f4f4;
-    float: left;
+    background-color: transparent;
     border: none;
-    outline: none;
+    padding: 10px 20px;
+    font-size: 1rem;
     cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-    font-size: 17px;
+    color: #6c4a2d;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* Container principal */
+#game {
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+/* Estilo da seção de Finais Desbloqueados */
+#endingsTab {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* Título de Finais Desbloqueados */
+#endingsTab h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #6c4a2d;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+/* Grid de duas colunas para os finais desbloqueados */
+
+/* Estilo dos finais desbloqueados */
+#endingsTab p {
+    font-size: 1rem;
+    padding-left: 10px;
+    border-left: 4px solid #d6a02b;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin: 0; /* Remove o espaçamento padrão entre parágrafos */
+}
+
+/* Botão de navegação ativo */
+.tab button.active {
+    background-color: #d6a02b;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+}
+
+.tab button {
+    padding: 10px 20px;
+    border: 1px solid #d6a02b;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .tab button:hover {
-    background-color: #ddd;
-}
-
-.tab button.active {
-    background-color: #ccc;
-}
-
-.tabcontent {
-    display: none;
-    padding: 20px;
-    border-top: none;
-}
-
-#status p {
-    margin: 5px 0;
-}
-
-#choices button {
-    margin: 10px;
-    padding: 10px 20px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#choices button:hover {
-    background-color: #2980b9;
-}
-
-#unlockedEndings {
-    margin-top: 20px;
-    font-size: 16px;
+    background-color: #f4f4f4;
 }
 
 #unlockedEndings p {
-    margin: 10px 0;
+    margin-bottom: 20px;
+}
+/* Estilo do container principal do fim de jogo */
+#endScreen {
+    width: 90%; /* Largura ajustada para ocupar 90% da tela */
+    max-width: 800px; /* Limite de largura */
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    overflow-y: auto; /* Permitindo rolagem vertical apenas dentro do container */
+    max-height: 70vh; /* Limitar a altura total a 70% da tela */
+}
+
+/* Estilos do título e do texto de fim de jogo */
+#endScreen h2 {
+    font-size: 2rem; /* Tamanho ajustado */
+    font-weight: bold;
+    color: #8b4513;
+    margin-bottom: 15px;
+}
+
+#endScreen p {
+    font-size: 1rem; /* Ajustado para caber melhor */
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* Estilo da lista de finais */
+#endScreen ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+#endScreen li {
+    font-size: 1rem; /* Ajustado */
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-left: 5px solid #d6a02b;
+    border-radius: 8px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    text-align: left;
+    line-height: 1.5;
+}
+
+/* Estilo do botão Jogar Novamente */
+#endScreen button {
+    background-color: #8b4513;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem; /* Tamanho do botão ajustado */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+#endScreen button:hover {
+    background-color: #a0522d;
+}
+
+/* Ajuste da rolagem para quando o conteúdo for maior que a tela */
+body {
+    overflow-y: auto;
 }
