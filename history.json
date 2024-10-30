@@ -7,7 +7,7 @@
         {
             "id": 1,
             "title": "Início da Jornada",
-            "text": "Lorenzo está sentado na grande sala do conselho. Seu pai, o antigo príncipe, faleceu recentemente e agora toda a responsabilidade está sobre seus ombros. O conselheiro-chefe se aproxima com um problema urgente. 'Príncipe Lorenzo, os camponeses reclamam de impostos altos, mas precisamos dos recursos para o exército. O que devemos fazer?'",
+            "text": "Lorenzo está sentado na grande sala do conselho. Seu pai, o antigo príncipe, faleceu recentemente e agora toda a responsabilidade está sobre seus ombros. O conselheiro-chefe se aproxima com um problema urgente. \"Príncipe Lorenzo, os camponeses reclamam de impostos altos, mas precisamos dos recursos para o exército. O que devemos fazer?\"",
             "choices": [
                 {
                     "text": "Reduzir os impostos para melhorar a relação com o povo.",
@@ -43,7 +43,7 @@
         {
             "id": 2,
             "title": "O Povo Fiel",
-            "text": "Você reduz os impostos e a alegria do povo é palpável. Eles fazem festas em sua homenagem, e Lorenzo sente o calor de sua aprovação. No entanto, seu tesouro está ficando vazio, e os soldados começam a demonstrar descontentamento. Um dos seus conselheiros sugere que você procure um nobre rico para pedir um empréstimo.",
+            "text": "Você reduz os impostos e a alegria do povo é palpável. Eles fazem festas em sua homenagem, e Lorenzo sente o calor de sua aprovação. No entanto, seu tesouro está ficando vazio, e os soldados começam a demonstrar descontentamento devido à falta de pagamento. Um dos seus conselheiros se aproxima com uma sugestão: \"Príncipe Lorenzo, talvez devêssemos procurar um nobre rico para pedir um empréstimo e assim manter nossas finanças estáveis.\"",
             "choices": [
                 {
                     "text": "Procurar um nobre e pedir um empréstimo.",
@@ -69,7 +69,7 @@
         {
             "id": 3,
             "title": "Força Militar",
-            "text": "Mantendo os impostos altos, você fortalece o exército. Seus soldados estão preparados para defender Florença de qualquer ameaça, mas o povo está se revoltando. Pequenas rebeliões começam a surgir, e um de seus conselheiros sugere uma estratégia de controle: 'Talvez devêssemos prender os líderes da revolta para acalmar a situação'.",
+            "text": "Mantendo os impostos altos, você fortalece o exército. Seus soldados estão preparados para defender Florença de qualquer ameaça, mas o povo começa a mostrar sinais de descontentamento. Pequenas rebeliões começam a surgir, e um de seus conselheiros sugere uma estratégia de controle: \"Talvez devêssemos prender os líderes da revolta para acalmar a situação.\"",
             "choices": [
                 {
                     "text": "Prender os líderes da revolta para mostrar poder.",
@@ -95,7 +95,7 @@
         {
             "id": 4,
             "title": "A Aliança dos Nobres",
-            "text": "Um nobre concorda em emprestar o ouro necessário, mas agora Lorenzo está em débito com ele. Esse nobre pede um favor: 'Preciso de ajuda contra um rival que vem ameaçando minhas terras'.",
+            "text": "Um nobre concorda em emprestar o ouro necessário, mas agora Lorenzo está em débito com ele. Esse nobre pede um favor: \"Preciso de ajuda contra um rival que vem ameaçando minhas terras. Poderia enviar algumas tropas para me auxiliar?\"",
             "choices": [
                 {
                     "text": "Enviar soldados para ajudar o nobre.",
@@ -120,7 +120,7 @@
         {
             "id": 5,
             "title": "O Mercado Negro",
-            "text": "Sem recorrer aos nobres, Lorenzo decide buscar recursos através do mercado negro. Isso traz riquezas rápidas, mas também atrai a atenção de inimigos perigosos. Um mercador sugere um acordo vantajoso, mas arriscado.",
+            "text": "Sem recorrer aos nobres, Lorenzo decide buscar recursos através do mercado negro. Isso traz riquezas rápidas, mas também atrai a atenção de inimigos perigosos. Um mercador obscuro se aproxima com uma proposta: \"Posso fornecer os recursos que precisa, mas há riscos envolvidos.\"",
             "choices": [
                 {
                     "text": "Aceitar o acordo para enriquecer rapidamente.",
@@ -129,7 +129,7 @@
                         "influence": -15
                     },
                     "history": "Lorenzo decidiu aceitar o acordo do mercado negro, optando por riquezas rápidas, mesmo ciente dos riscos envolvidos.",
-                    "nextChapter": 15
+                    "nextChapter": 18
                 },
                 {
                     "text": "Rejeitar o acordo e buscar uma alternativa mais segura.",
@@ -146,7 +146,7 @@
         {
             "id": 6,
             "title": "O Medo dos Rebeldes",
-            "text": "Você prende os líderes da revolta e o povo é rapidamente silenciado, mas o medo se espalha. Os camponeses estão começando a odiar seu governo, e os rebeldes que sobraram estão se organizando em segredo. Um espião chega até você com informações sobre um possível golpe.",
+            "text": "Você prende os líderes da revolta e o povo é rapidamente silenciado, mas o medo se espalha. Os camponeses começam a odiar seu governo, e rumores de uma conspiração contra você surgem. Um espião chega com informações sobre um possível golpe planejado pelos descontentes.",
             "choices": [
                 {
                     "text": "Investigar e prender os conspiradores.",
@@ -154,17 +154,16 @@
                         "influence": 10,
                         "military": 5
                     },
-                    "history": "Lorenzo decidiu investigar e prender os conspiradores, reforçando seu poder e mostrando que traição não seria tolerada. Mas, além disso, os problemas econômicos continuam.",
-                    "nextChapter": 10
+                    "history": "Lorenzo decidiu investigar e prender os conspiradores, reforçando seu poder e mostrando que traição não seria tolerada.",
+                    "nextChapter": 20
                 },
                 {
                     "text": "Ignorar os rumores e focar em reforçar seu poder.",
                     "effects": {
                         "military": 10
                     },
-                    "history": "Lorenzo decidiu ignorar os rumores, acreditando que fortalecer seu poder e exército seria suficiente para lidar com qualquer ameaça. Mas, além disso, os problemas econômicos continuam.",
-                    "nextChapter": 10
-
+                    "history": "Lorenzo decidiu ignorar os rumores, acreditando que fortalecer seu poder e exército seria suficiente para lidar com qualquer ameaça.",
+                    "nextChapter": 12
                 }
             ],
             "image": "./img/imagem_6.jpg"
@@ -172,7 +171,7 @@
         {
             "id": 7,
             "title": "A Negociação Delicada",
-            "text": "Você decide negociar com os líderes da revolta. Eles concordam em interromper os protestos em troca de uma redução gradual dos impostos e melhorias nas condições de vida. Porém, há descontentamento no exército que se sente desvalorizado.",
+            "text": "Você decide negociar com os líderes da revolta. Eles concordam em interromper os protestos em troca de uma redução gradual dos impostos e melhorias nas condições de vida. Porém, alguns oficiais do exército demonstram insatisfação, sentindo que a autoridade está sendo minada.",
             "choices": [
                 {
                     "text": "Cumprir o acordo com o povo, mesmo enfraquecendo o exército.",
@@ -181,16 +180,16 @@
                         "military": -10
                     },
                     "history": "Lorenzo cumpriu o acordo com o povo, priorizando a paz interna e o bem-estar da população, apesar do enfraquecimento militar.",
-                    "nextChapter": 11
+                    "nextChapter": 10
                 },
                 {
                     "text": "Quebrar o acordo e fortalecer o exército.",
                     "effects": {
-                        "military": 10,
-                        "popularity": -10
+                        "military": 20,
+                        "popularity": -20
                     },
                     "history": "Lorenzo decidiu quebrar o acordo com o povo para fortalecer o exército, garantindo segurança contra ameaças externas, mas perdendo a confiança dos camponeses.",
-                    "nextChapter": 5
+                    "nextChapter": 12
                 }
             ],
             "image": "./img/imagem_7.jpg"
@@ -198,7 +197,7 @@
         {
             "id": 8,
             "title": "A Guerra Privada",
-            "text": "Os soldados enviados para ajudar o nobre vencem a disputa, mas sofrem grandes perdas. O nobre agora está em dívida com você, mas o exército de Florença está enfraquecido e vulnerável a invasões.",
+            "text": "Os soldados enviados para ajudar o nobre vencem a disputa, mas sofrem grandes perdas. O nobre agora está em dívida com você, mas o exército de Florença está enfraquecido e vulnerável. Notícias de possíveis invasões começam a surgir.",
             "choices": [
                 {
                     "text": "Exigir recursos do nobre para reerguer o exército.",
@@ -215,7 +214,7 @@
                         "influence": 10
                     },
                     "history": "Lorenzo decidiu buscar novas alianças para proteger Florença, expandindo sua rede de apoio político e militar.",
-                    "nextChapter": 15
+                    "nextChapter": 19
                 }
             ],
             "image": "./img/imagem_8.jpg"
@@ -223,7 +222,7 @@
         {
             "id": 9,
             "title": "A Traição Silenciosa",
-            "text": "Ao recusar a ajudar o nobre, ele começa a conspirar contra você, buscando aliados entre seus inimigos. Um de seus conselheiros descobre o plano e sugere que você ataque primeiro para eliminar a ameaça.",
+            "text": "Ao recusar ajudar o nobre, ele começa a conspirar contra você, buscando aliados entre seus inimigos. Um de seus conselheiros descobre o plano e sugere que você tome uma ação imediata.",
             "choices": [
                 {
                     "text": "Atacar o nobre antes que ele se fortaleça.",
@@ -231,7 +230,7 @@
                         "military": 5,
                         "influence": -5
                     },
-                    "history": "Lorenzo decidiu atacar o nobre antes que ele se tornasse uma ameaça maior, eliminando a conspiração em seu início. Mas, ainda precisa falar com seus rivais.",
+                    "history": "Lorenzo decidiu atacar o nobre antes que ele se tornasse uma ameaça maior, eliminando a conspiração em seu início.",
                     "nextChapter": 14
                 },
                 {
@@ -240,31 +239,32 @@
                         "influence": 5
                     },
                     "history": "Lorenzo optou por tentar convencer o nobre a desistir da conspiração, apostando em uma solução diplomática.",
-                    "nextChapter": 7
+                    "nextChapter": 21
                 }
             ],
             "image": "./img/imagem_9.jpg"
         },
         {
             "id": 10,
-            "title": "Recursos do Nobre",
-            "text": "O nobre fornece os recursos necessários para reerguer o exército, mas a dívida com ele se torna enorme. Enquanto o exército se recupera, Lorenzo deve decidir como lidar com essa nova dependência.",
+            "title": "Desafios Internos",
+            "text": "Com as ações recentes, Florença enfrenta desafios internos. O povo está dividido, e os recursos estão limitados. Alguns nobres começam a questionar sua liderança. Você precisa tomar uma decisão para unificar seu principado.",
             "choices": [
                 {
-                    "text": "Buscar meios de pagar a dívida rapidamente.",
+                    "text": "Criar um conselho de cidadãos para compartilhar o poder.",
                     "effects": {
-                        "wealth": -10,
-                        "influence": 5
+                        "popularity": 15,
+                        "influence": -10
                     },
-                    "history": "Lorenzo decidiu buscar meios de pagar a dívida com o nobre o mais rápido possível, tentando evitar a dependência prolongada.",
-                    "nextChapter": 11
+                    "history": "Lorenzo decidiu criar um conselho de cidadãos, mostrando disposição para compartilhar o poder e ouvir o povo.",
+                    "nextChapter": 13
                 },
                 {
-                    "text": "Ignorar a dívida por enquanto e focar no fortalecimento militar.",
+                    "text": "Reafirmar sua autoridade e governar com mão firme.",
                     "effects": {
-                        "military": 10
+                        "military": 10,
+                        "popularity": -15
                     },
-                    "history": "Lorenzo decidiu ignorar a dívida por enquanto, priorizando o fortalecimento militar para garantir a segurança de Florença.",
+                    "history": "Lorenzo optou por reafirmar sua autoridade, governando com mão firme para manter a ordem.",
                     "nextChapter": 12
                 }
             ],
@@ -272,52 +272,52 @@
         },
         {
             "id": 11,
-            "title": "Pagamento da Dívida",
-            "text": "Lorenzo busca formas de pagar a dívida com o nobre rapidamente. Ele considera aumentar os impostos novamente ou cortar gastos em outras áreas, mas sabe que qualquer uma dessas escolhas pode causar descontentamento.",
+            "title": "Alternativas Seguras",
+            "text": "Lorenzo busca alternativas seguras para aumentar os recursos de Florença. Ele investe em melhorias agrícolas e promove o comércio local, lentamente recuperando a economia.",
             "choices": [
                 {
-                    "text": "Aumentar os impostos para pagar a dívida.",
+                    "text": "Continuar investindo no desenvolvimento interno.",
                     "effects": {
-                        "popularity": -10,
-                        "wealth": 10
+                        "wealth": 10,
+                        "popularity": 5
                     },
-                    "history": "Lorenzo decidiu aumentar os impostos para pagar a dívida, correndo o risco de descontentamento popular. Infelizmente, a arrecadação ainda não é suficiente, e ele precisa de mais dinheiro para cuidar do seu reino.",
-                    "nextChapter": 15
+                    "history": "Lorenzo decidiu continuar investindo no desenvolvimento interno, fortalecendo a economia e o bem-estar do povo.",
+                    "nextChapter": 13
                 },
                 {
-                    "text": "Cortar gastos em outras áreas para pagar a dívida.",
+                    "text": "Explorar oportunidades de comércio com nações vizinhas.",
                     "effects": {
-                        "wealth": 5,
-                        "military": -5
+                        "wealth": 15,
+                        "influence": 5
                     },
-                    "history": "Lorenzo decidiu cortar gastos em outras áreas para pagar a dívida, tentando evitar aumentar o fardo sobre o povo. Assim, ele cria o Conselho de Cidadãos.",
-                    "nextChapter": 13
+                    "history": "Lorenzo optou por explorar o comércio com nações vizinhas, aumentando a riqueza e a influência de Florença.",
+                    "nextChapter": 19
                 }
             ],
             "image": "./img/imagem_11.jpg"
         },
         {
             "id": 12,
-            "title": "Foco no Poder Militar",
-            "text": "Ignorando a dívida com o nobre por enquanto, Lorenzo concentra seus esforços no fortalecimento militar. Com um exército mais forte, ele está pronto para enfrentar ameaças, mas a dívida continua a pairar sobre ele como uma sombra.",
+            "title": "Governando com Pulso Firme",
+            "text": "Ao reafirmar sua autoridade, Lorenzo fortalece o exército e impõe novas leis. A ordem é restabelecida, mas o descontentamento entre o povo cresce silenciosamente. Sussurros de revolta começam a circular.",
             "choices": [
                 {
-                    "text": "Enfrentar a dívida e negociar melhores termos.",
+                    "text": "Investir em propaganda para melhorar sua imagem.",
                     "effects": {
-                        "influence": 5,
+                        "popularity": 10,
                         "wealth": -5
                     },
-                    "history": "Lorenzo decidiu enfrentar a dívida e tentar negociar melhores termos com o nobre.",
-                    "nextChapter": 15
+                    "history": "Lorenzo decidiu investir em propaganda para melhorar sua imagem perante o povo.",
+                    "nextChapter": 13
                 },
                 {
-                    "text": "Ignorar a dívida e focar em novas conquistas militares.",
+                    "text": "Ignorar o descontentamento e focar na expansão territorial.",
                     "effects": {
-                        "military": 10,
-                        "influence": -5
+                        "military": 15,
+                        "popularity": -10
                     },
-                    "history": "Lorenzo decidiu ignorar a dívida e focar em novas conquistas militares, buscando fortalecer ainda mais sua posição. Além disso, aproveitou para melhorar sua relação com o povo, criando o conselho de cidadãos",
-                    "nextChapter": 13
+                    "history": "Lorenzo ignorou o descontentamento interno e decidiu focar na expansão territorial de Florença.",
+                    "nextChapter": 17
                 }
             ],
             "image": "./img/imagem_12.jpg"
@@ -325,23 +325,23 @@
         {
             "id": 13,
             "title": "A Paz Temporária",
-            "text": "Com a criação do conselho de cidadãos, o povo se sente representado e a paz é restaurada temporariamente. No entanto, há rumores de que alguns nobres estão insatisfeitos com a perda de influência política.",
+            "text": "Com a criação do conselho de cidadãos ou os investimentos em sua imagem, o povo começa a sentir-se mais satisfeito. No entanto, alguns nobres estão insatisfeitos com a perda de influência e começam a se reunir em segredo.",
             "choices": [
                 {
-                    "text": "Ignorar os rumores e focar na administração do conselho.",
+                    "text": "Ignorar os rumores e focar na administração do principado.",
                     "effects": {
                         "popularity": 5,
                         "influence": -5
                     },
-                    "history": "Lorenzo decidiu ignorar os rumores dos nobres, confiando no conselho de cidadãos para ajudar na administração de Florença.",
-                    "nextChapter": 15
+                    "history": "Lorenzo decidiu ignorar os rumores dos nobres, confiando que suas recentes ações manteriam a estabilidade.",
+                    "nextChapter": 16
                 },
                 {
                     "text": "Investigar os nobres e assegurar que não haja conspiração.",
                     "effects": {
                         "influence": 5
                     },
-                    "history": "Lorenzo decidiu investigar os nobres, garantindo que não houvesse nenhuma conspiração contra seu governo participativo.",
+                    "history": "Lorenzo decidiu investigar os nobres, garantindo que não houvesse nenhuma conspiração contra seu governo.",
                     "nextChapter": 14
                 }
             ],
@@ -349,51 +349,51 @@
         },
         {
             "id": 14,
-            "title": "A Mediação Arriscada",
-            "text": "Lorenzo tenta mediar um acordo entre os rivais. Depois de muita negociação, os dois lados concordam com um tratado de paz. Embora tenha evitado um conflito, a tensão ainda permanece no ar.",
+            "title": "Conspiração Descoberta",
+            "text": "Sua investigação revela que os nobres planejam derrubá-lo. Com essa informação, você precisa agir rapidamente para neutralizar a ameaça e manter seu lugar no trono.",
             "choices": [
                 {
-                    "text": "Fortalecer o tratado com novas concessões.",
+                    "text": "Confrontar os nobres e oferecer um acordo.",
                     "effects": {
                         "influence": 5,
-                        "wealth": -5
+                        "military": -5
                     },
-                    "history": "Lorenzo decidiu fortalecer o tratado de paz com concessões, buscando evitar futuros conflitos. Além disso, criou o conselho de cidadãos.",
-                    "nextChapter": 13
+                    "history": "Lorenzo confrontou os nobres e ofereceu um acordo para evitar conflitos, buscando manter a paz.",
+                    "nextChapter": 16
                 },
                 {
-                    "text": "Manter o tratado sem concessões adicionais.",
+                    "text": "Prender os conspiradores e consolidar seu poder.",
                     "effects": {
-                        "influence": -5,
-                        "popularity": 5
+                        "military": 10,
+                        "popularity": -5
                     },
-                    "history": "Lorenzo decidiu manter o tratado sem conceder mais nada, confiando que todas as partes respeitariam o acordo. Além disso, criou o conselho de cidadãos.",
-                    "nextChapter": 13
+                    "history": "Lorenzo decidiu prender os conspiradores, consolidando seu poder e enviando uma mensagem forte aos demais.",
+                    "nextChapter": 15
                 }
             ],
             "image": "./img/imagem_14.jpg"
         },
         {
             "id": 15,
-            "title": "O Domínio das Sombras",
-            "text": "Lorenzo decide tentar controlar o mercado negro para obter recursos. Com o tempo, ele consegue influenciar o mercado, garantindo riqueza para Florença, mas também criando inimigos poderosos.",
+            "title": "Consolidando o Poder",
+            "text": "Com os conspiradores presos, Lorenzo fortalece seu controle sobre Florença. Embora a ordem tenha sido restabelecida, o medo e a desconfiança se espalham entre os nobres e o povo.",
             "choices": [
                 {
-                    "text": "Continuar controlando o mercado negro em segredo.",
+                    "text": "Iniciar reformas para ganhar novamente a confiança do povo.",
                     "effects": {
-                        "wealth": 10,
-                        "influence": -10
+                        "popularity": 10,
+                        "wealth": -5
                     },
-                    "history": "Lorenzo decidiu continuar controlando o mercado negro, garantindo uma fonte constante de riqueza, mas sempre em risco de exposição.",
+                    "history": "Lorenzo decidiu iniciar reformas, buscando reconquistar a confiança do povo através de ações positivas.",
                     "nextChapter": 16
                 },
                 {
-                    "text": "Abandonar o controle do mercado negro e buscar legalizar o comércio.",
+                    "text": "Manter o controle rígido e focar na segurança.",
                     "effects": {
-                        "popularity": 5,
-                        "wealth": -10
+                        "military": 10,
+                        "influence": -5
                     },
-                    "history": "Lorenzo decidiu abandonar o controle do mercado negro, buscando legalizar o comércio e tornar Florença um lugar mais seguro.",
+                    "history": "Lorenzo optou por manter um controle rígido, acreditando que a segurança era mais importante que a popularidade.",
                     "nextChapter": 17
                 }
             ],
@@ -401,56 +401,159 @@
         },
         {
             "id": 16,
-            "title": "Os Inimigos Ocultos",
-            "text": "Ao continuar a controlar o mercado negro em segredo, Lorenzo atrai a atenção de facções rivais e inimigos poderosos. Ele precisa lidar com as ameaças crescentes para manter seu domínio e proteger Florença.",
+            "title": "Prosperidade e Estabilidade",
+            "text": "Ao focar na prosperidade econômica e no bem-estar do povo, Lorenzo implementa políticas que promovem o comércio, a arte e a educação. Florença floresce como um centro cultural e econômico, atraindo talentos de toda a região. O povo está satisfeito, e a paz reina no principado.",
             "choices": [
                 {
-                    "text": "Confrontar as facções rivais abertamente.",
+                    "text": "Continuar promovendo a cultura e as artes.",
                     "effects": {
-                        "military": 10,
-                        "influence": -5
+                        "popularity": 10,
+                        "influence": 5
                     },
-                    "history": "Lorenzo decidiu confrontar as facções rivais abertamente, fortalecendo seu exército e mostrando poder, mas alienando possíveis aliados.",
-                    "nextChapter": "0"  
+                    "history": "Lorenzo decidiu continuar promovendo a cultura e as artes, consolidando Florença como um berço do Renascimento.",
+                    "nextChapter": 0
                 },
                 {
-                    "text": "Usar a inteligência para neutralizar as ameaças silenciosamente.",
+                    "text": "Fortalecer alianças com outras cidades-estados para manter a paz.",
                     "effects": {
-                        "influence": 10,
-                        "wealth": -5
+                        "influence": 15
                     },
-                    "history": "Lorenzo optou por usar a inteligência para neutralizar as ameaças silenciosamente, mantendo a estabilidade sem aliar-se ao conflito direto.",
-                    "nextChapter": "0"  
+                    "history": "Lorenzo optou por fortalecer alianças com outras cidades-estados, garantindo estabilidade e prosperidade contínuas.",
+                    "nextChapter": 0
                 }
             ],
             "image": "./img/imagem_16.jpg"
         },
         {
             "id": 17,
-            "title": "A Legalização do Comércio",
-            "text": "Lorenzo decidiu abandonar o controle do mercado negro e legalizar o comércio em Florença. Essa mudança traz novas oportunidades econômicas, mas também desafios inesperados. O comércio legal atrai novos comerciantes e empreendedores, mas alguns grupos clandestinos resistem à mudança.",
+            "title": "A Era da Expansão",
+            "text": "Decidido a expandir o território de Florença, Lorenzo mobiliza seu exército e inicia campanhas militares contra territórios vizinhos. Suas conquistas aumentam o prestígio e a riqueza do principado, mas também trazem novos desafios, como administrar as terras conquistadas e lidar com possíveis rebeliões.",
             "choices": [
                 {
-                    "text": "Incentivar o crescimento econômico através de incentivos fiscais para comerciantes.",
+                    "text": "Estabelecer governadores leais nas novas terras.",
                     "effects": {
-                        "wealth": 15,
-                        "popularity": 10
+                        "influence": 10,
+                        "military": -5
                     },
-                    "history": "Lorenzo incentivou o crescimento econômico de Florença através de incentivos fiscais, atraindo comerciantes e impulsionando a economia local.",
-                    "nextChapter": "0"  
+                    "history": "Lorenzo decidiu estabelecer governadores leais nas novas terras, buscando manter o controle e a estabilidade.",
+                    "nextChapter": 0
                 },
                 {
-                    "text": "Implementar uma força de segurança especializada para monitorar o comércio legal.",
+                    "text": "Investir em infraestrutura e integração cultural das regiões conquistadas.",
                     "effects": {
-                        "military": 10,
-                        "influence": 5
+                        "wealth": -10,
+                        "popularity": 10
                     },
-                    "history": "Lorenzo implementou uma força de segurança especializada para monitorar o comércio legal, garantindo que as operações fossem transparentes e regulamentadas.",
-                    "nextChapter": "0"  
+                    "history": "Lorenzo optou por investir em infraestrutura e promover a integração cultural, visando a longo prazo unir as regiões sob seu domínio.",
+                    "nextChapter": 0
                 }
             ],
             "image": "./img/imagem_17.jpg"
-        }                        
+        },
+        {
+            "id": 18,
+            "title": "As Sombras Profundas",
+            "text": "Engajando-se com o mercado negro, Lorenzo obtém riquezas rapidamente. No entanto, a corrupção começa a se espalhar e inimigos perigosos aparecem. A estabilidade de Florença está ameaçada por forças ocultas.",
+            "choices": [
+                {
+                    "text": "Continuar explorando o mercado negro para enriquecer.",
+                    "effects": {
+                        "wealth": 10,
+                        "influence": -10
+                    },
+                    "history": "Lorenzo decidiu continuar explorando o mercado negro, acumulando riquezas enquanto lida com riscos crescentes.",
+                    "nextChapter": 15
+                },
+                {
+                    "text": "Cortar os laços com o mercado negro e buscar redenção.",
+                    "effects": {
+                        "popularity": 5,
+                        "wealth": -10
+                    },
+                    "history": "Lorenzo optou por cortar os laços com o mercado negro, tentando limpar sua reputação e a de Florença.",
+                    "nextChapter": 11
+                }
+            ],
+            "image": "./img/imagem_18.jpg"
+        },
+        {
+            "id": 19,
+            "title": "Forjando Novos Laços",
+            "text": "Lorenzo busca alianças com cidades vizinhas. As negociações são difíceis, mas há potencial para fortalecer a posição de Florença na região.",
+            "choices": [
+                {
+                    "text": "Firmar tratados comerciais e militares.",
+                    "effects": {
+                        "influence": 15,
+                        "wealth": 5
+                    },
+                    "history": "Lorenzo firmou tratados que fortaleceram economicamente e militarmente Florença.",
+                    "nextChapter": 16
+                },
+                {
+                    "text": "Focar em alianças culturais e educativas.",
+                    "effects": {
+                        "popularity": 10,
+                        "influence": 5
+                    },
+                    "history": "Lorenzo promoveu alianças culturais, enriquecendo a vida em Florença e fortalecendo laços diplomáticos.",
+                    "nextChapter": 16
+                }
+            ],
+            "image": "./img/imagem_19.jpg"
+        },
+        {
+            "id": 20,
+            "title": "O Regime de Ferro",
+            "text": "Com os conspiradores presos, Lorenzo governa com mão de ferro. O medo mantém a ordem, mas o descontentamento cresce nas sombras.",
+            "choices": [
+                {
+                    "text": "Relaxar as medidas e buscar reconciliação.",
+                    "effects": {
+                        "popularity": 10,
+                        "influence": -5
+                    },
+                    "history": "Lorenzo decidiu relaxar as medidas rígidas, tentando reconquistar o apoio do povo.",
+                    "nextChapter": 13
+                },
+                {
+                    "text": "Continuar com o governo autoritário.",
+                    "effects": {
+                        "military": 10,
+                        "popularity": -10
+                    },
+                    "history": "Lorenzo manteve seu governo autoritário, priorizando a ordem sobre a liberdade.",
+                    "nextChapter": 17
+                }
+            ],
+            "image": "./img/imagem_20.jpg"
+        },
+        {
+            "id": 21,
+            "title": "Esforços Diplomáticos",
+            "text": "Lorenzo encontra-se com o nobre conspirador para tentar convencê-lo a desistir de seus planos. A tensão é alta, e o futuro de Florença depende do resultado.",
+            "choices": [
+                {
+                    "text": "Oferecer concessões ao nobre.",
+                    "effects": {
+                        "influence": 5,
+                        "wealth": -5
+                    },
+                    "history": "Lorenzo ofereceu concessões, conseguindo evitar o conflito e mantendo uma paz frágil.",
+                    "nextChapter": 13
+                },
+                {
+                    "text": "Recusar-se a ceder e ameaçar o nobre.",
+                    "effects": {
+                        "military": 5,
+                        "influence": -5
+                    },
+                    "history": "Lorenzo recusou-se a ceder, deixando claro que qualquer traição seria severamente punida.",
+                    "nextChapter": 14
+                }
+            ],
+            "image": "./img/imagem_21.jpg"
+        }
     ],
     "endings": [
         {
@@ -461,52 +564,57 @@
         {
             "id": 2,
             "title": "O Regime de Ferro",
-            "text": "Lorenzo decidiu manter o poder absoluto, recusando a criação do conselho de cidadãos. A ordem foi mantida, mas ao custo de descontentamento crescente."
+            "text": "Lorenzo decidiu manter o poder absoluto, governando com mão de ferro. A ordem foi mantida, mas ao custo de liberdade e felicidade do povo."
         },
         {
             "id": 3,
             "title": "Conspiração Desmantelada",
-            "text": "Lorenzo optou por investigar os nobres insatisfeitos. A conspiração foi desmantelada antes que pudesse causar danos."
+            "text": "Lorenzo investigou e desmantelou conspirações contra ele. Sua segurança foi garantida, mas a desconfiança permanece no ar."
         },
         {
             "id": 4,
             "title": "A Era da Expansão",
-            "text": "Lorenzo conseguiu equilibrar a força militar e as riquezas de Florença. Ele expandiu o território, trouxe prosperidade ao seu principado e assegurou uma era de crescimento e poder. Embora o povo não o amasse tanto quanto poderia, ele conquistou o respeito de aliados e inimigos. Florença se tornou um centro de poder na região, temida e respeitada por todos."
+            "text": "Lorenzo expandiu o território de Florença, tornando-a uma potência regional. Novos desafios surgem com as terras conquistadas."
         },
         {
             "id": 5,
             "title": "Riqueza Sombria",
-            "text": "Lorenzo decidiu continuar controlando o mercado negro em segredo. Florença se tornou próspera, mas à custa de alianças perigosas."
+            "text": "Lorenzo continuou a controlar o mercado negro. Florença prosperou financeiramente, mas a corrupção corroeu sua base."
         },
         {
             "id": 6,
             "title": "Comércio Legalizado",
-            "text": "Lorenzo abandonou o controle do mercado negro e optou por legalizar o comércio. Florença se tornou um lugar mais seguro."
+            "text": "Lorenzo legalizou o comércio, fortalecendo a economia e trazendo estabilidade para Florença."
         },
         {
             "id": 7,
             "title": "Prosperidade e Estabilidade",
-            "text": "Graças às medidas econômicas e sociais implementadas por Lorenzo, Florença alcançou uma era de prosperidade e estabilidade, equilibrando crescimento econômico com bem-estar social."
+            "text": "As políticas de Lorenzo levaram Florença a uma era de ouro, com cultura, economia e bem-estar em alta."
         },
         {
             "id": 8,
             "title": "Domínio Militar",
-            "text": "Lorenzo fortaleceu significativamente o exército, garantindo a segurança de Florença contra todas as ameaças externas. No entanto, a população permanece desconfiada e distante."
+            "text": "Com um exército poderoso, Lorenzo garantiu a segurança de Florença, mas o povo vive sob constante vigilância."
         },
         {
             "id": 9,
             "title": "Alianças Estratégicas Fortalecidas",
-            "text": "As alianças estratégicas formadas por Lorenzo expandiram a influência de Florença na região, consolidando seu poder político e econômico."
+            "text": "As alianças formadas por Lorenzo expandiram a influência de Florença, assegurando paz e prosperidade."
         },
         {
             "id": 10,
             "title": "Reconstrução Harmoniosa",
-            "text": "Após as guerras e conflitos, Lorenzo focou na reconstrução de Florença, equilibrando segurança e bem-estar social, levando a uma era de paz e prosperidade."
+            "text": "Após conflitos internos, Lorenzo focou na reconstrução, unindo o povo e fortalecendo Florença."
         },
         {
             "id": 11,
             "title": "Domínio Espião",
-            "text": "Com a rede de espionagem reforçada, Lorenzo manteve um controle rígido sobre seus inimigos, garantindo a segurança de Florença, mas à custa de uma sociedade vigilante e desconfiada."
+            "text": "Lorenzo manteve controle através de espionagem, garantindo segurança ao custo de liberdade pessoal."
+        },
+        {
+            "id": 12,
+            "title": "Um Fim Modesto",
+            "text": "Lorenzo governou com cautela, mantendo Florença estável, mas sem grandes avanços ou glórias. Sua liderança foi marcada pela neutralidade e ausência de decisões impactantes."
         }
     ]
 }

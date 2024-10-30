@@ -88,25 +88,33 @@ function determineEnding() {
     let finalEnding;
 
     // Condições baseadas nas métricas para determinar o final
-    if (popularity >= 80 && influence >= 80 && military >= 50 && wealth >= 50) {
+
+    if (popularity >= 70 && influence >= 70 && military >= 50 && wealth >= 50) {
         finalEnding = endings.find(end => end.id === 1);  // A Revolução Vitoriosa
-    } else if (military >= 80 && influence >= 50 && popularity < 50 && wealth < 50) {
+    } else if (military >= 80 && influence >= 60 && popularity < 50 && wealth < 50) {
         finalEnding = endings.find(end => end.id === 2);  // O Regime de Ferro
-    } else if (wealth >= 80 && popularity < 50 && influence >= 50 && military >= 40) {
+    } else if (wealth >= 80 && popularity < 50 && influence >= 60 && military >= 40) {
         finalEnding = endings.find(end => end.id === 5);  // Riqueza Sombria
     } else if (military >= 60 && wealth >= 60 && popularity >= 40 && influence >= 40) {
         finalEnding = endings.find(end => end.id === 4);  // A Era da Expansão
-    } else if (influence >= 60 && popularity < 50 && wealth >= 40 && military >= 40) {
+    } else if (influence >= 70 && popularity < 50 && wealth >= 50 && military >= 40) {
         finalEnding = endings.find(end => end.id === 3);  // Conspiração Desmantelada
-    } else if (wealth >= 60 && popularity >= 50 && influence >= 50 && military >= 50) {
+    } else if (wealth >= 70 && popularity >= 60 && influence >= 60 && military >= 50) {
         finalEnding = endings.find(end => end.id === 7);  // Prosperidade e Estabilidade
     } else if (military >= 70 && influence < 50 && popularity >= 40 && wealth >= 40) {
         finalEnding = endings.find(end => end.id === 8);  // Domínio Militar
-    } else if (wealth >= 50 && popularity >= 50 && influence >= 50 && military >= 40) {
+    } else if (influence >= 80 && popularity >= 60 && military >= 50 && wealth >= 50) {
+        finalEnding = endings.find(end => end.id === 9);  // Alianças Estratégicas Fortalecidas
+    } else if (popularity >= 80 && wealth >= 70 && influence >= 50 && military >= 40) {
+        finalEnding = endings.find(end => end.id === 10); // Reconstrução Harmoniosa
+    } else if (influence >= 80 && military >= 70 && popularity < 50 && wealth >= 40) {
+        finalEnding = endings.find(end => end.id === 11); // Domínio Espião
+    } else if (wealth >= 60 && popularity >= 60 && influence >= 50 && military >= 40) {
         finalEnding = endings.find(end => end.id === 6);  // Comércio Legalizado
     } else {
-        finalEnding = endings.find(end => end.id === 6);  // Comércio Legalizado como fallback
+        finalEnding = endings.find(end => end.id === 12);  // Um Fim Modesto (novo final padrão)
     }
+
 
     return finalEnding;
 }
