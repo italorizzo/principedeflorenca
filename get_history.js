@@ -8,6 +8,7 @@ let endings = {};
 let visitedChapters = [];
 let unlockedEndings = [];
 let currentChapter = 1;
+let lastEnt = null;  // Variável para armazenar o 'ent' da última escolha
 
 function loadChapters() {
     fetch('history.json')
@@ -54,7 +55,11 @@ function showEnding() {
     }
 
     document.getElementById('chapterTitle').innerText = finalEnding.title;
-    document.getElementById('chapterText').innerText = finalEnding.text;
+    
+    // Combina o texto do final com o parágrafo adicional
+    let additionalParagraph = generateAdditionalParagraph();
+    document.getElementById('chapterText').innerHTML = `<p>${finalEnding.text}</p><p>${additionalParagraph}</p>`;
+    
     document.getElementById('choices').innerHTML = '';  
 
     if (unlockedEndings.length === endings.length) {
@@ -68,6 +73,40 @@ function showEnding() {
         playAgainButton.onclick = resetGame;  
         document.getElementById('choices').appendChild(playAgainButton);
     }
+}
+
+function generateAdditionalParagraph() {
+    let paragraph = "";
+
+    if (popularity >= 80) {
+        paragraph += "O povo celebra sua liderança, cantando canções em sua homenagem e transmitindo histórias de sua benevolência para as próximas gerações. ";
+    } else if (popularity <= 20) {
+        paragraph += "O descontentamento do povo é palpável, e murmúrios de rebelião ecoam nas ruas de Florença. ";
+    }
+
+    if (influence >= 80) {
+        paragraph += "Sua influência política se estende além das fronteiras, tornando-se um dos líderes mais respeitados da região. ";
+    } else if (influence <= 20) {
+        paragraph += "Sua falta de influência deixa Florença isolada, sem aliados confiáveis em tempos de necessidade. ";
+    }
+
+    if (military >= 80) {
+        paragraph += "Com um exército formidável, nenhuma ameaça é grande o suficiente para abalar a segurança de seu principado. ";
+    } else if (military <= 20) {
+        paragraph += "A fraqueza militar de Florença atrai invasores, e a proteção de seu povo está constantemente em risco. ";
+    }
+
+    if (wealth >= 80) {
+        paragraph += "A prosperidade econômica é evidente; os mercados estão cheios e os cofres reais transbordam de riquezas. ";
+    } else if (wealth <= 20) {
+        paragraph += "A pobreza assola o principado, e os recursos escassos tornam a sobrevivência diária um desafio para muitos. ";
+    }
+
+    if (paragraph === "") {
+        paragraph = "Apesar dos desafios, sua liderança manteve Florença estável, navegando entre altos e baixos com resiliência.";
+    }
+
+    return paragraph;
 }
 
 function showEndScreen() {
@@ -85,40 +124,9 @@ function showEndScreen() {
 }
 
 function determineEnding() {
-    let finalEnding;
-
-    // Condições baseadas nas métricas para determinar o final
-
-    if (popularity >= 70 && influence >= 70 && military >= 50 && wealth >= 50) {
-        finalEnding = endings.find(end => end.id === 1);  // A Revolução Vitoriosa
-    } else if (military >= 80 && influence >= 60 && popularity < 50 && wealth < 50) {
-        finalEnding = endings.find(end => end.id === 2);  // O Regime de Ferro
-    } else if (wealth >= 80 && popularity < 50 && influence >= 60 && military >= 40) {
-        finalEnding = endings.find(end => end.id === 5);  // Riqueza Sombria
-    } else if (military >= 60 && wealth >= 60 && popularity >= 40 && influence >= 40) {
-        finalEnding = endings.find(end => end.id === 4);  // A Era da Expansão
-    } else if (influence >= 70 && popularity < 50 && wealth >= 50 && military >= 40) {
-        finalEnding = endings.find(end => end.id === 3);  // Conspiração Desmantelada
-    } else if (wealth >= 70 && popularity >= 60 && influence >= 60 && military >= 50) {
-        finalEnding = endings.find(end => end.id === 7);  // Prosperidade e Estabilidade
-    } else if (military >= 70 && influence < 50 && popularity >= 40 && wealth >= 40) {
-        finalEnding = endings.find(end => end.id === 8);  // Domínio Militar
-    } else if (influence >= 80 && popularity >= 60 && military >= 50 && wealth >= 50) {
-        finalEnding = endings.find(end => end.id === 9);  // Alianças Estratégicas Fortalecidas
-    } else if (popularity >= 80 && wealth >= 70 && influence >= 50 && military >= 40) {
-        finalEnding = endings.find(end => end.id === 10); // Reconstrução Harmoniosa
-    } else if (influence >= 80 && military >= 70 && popularity < 50 && wealth >= 40) {
-        finalEnding = endings.find(end => end.id === 11); // Domínio Espião
-    } else if (wealth >= 60 && popularity >= 60 && influence >= 50 && military >= 40) {
-        finalEnding = endings.find(end => end.id === 6);  // Comércio Legalizado
-    } else {
-        finalEnding = endings.find(end => end.id === 12);  // Um Fim Modesto (novo final padrão)
-    }
-
-
-    return finalEnding;
+    // Utiliza o 'ent' da última escolha para determinar o final
+    return endings.find(end => end.id === lastEnt) || endings.find(end => end.id === 12);  // Se não encontrar, retorna o final padrão (id 12)
 }
-
 
 function loadChapter(chapterId) {
     currentChapter = chapterId;
@@ -157,14 +165,20 @@ function loadChapter(chapterId) {
             // Atualiza o texto do capítulo com o histórico da decisão
             document.getElementById('chapterText').innerText = choice.history;
 
+            // Armazena o 'ent' da escolha feita
+            lastEnt = choice.ent;
+
             // Remove o botão de escolha anterior para evitar cliques múltiplos
             choicesDiv.innerHTML = '';  
 
-            // Verifica se o nextChapter é 0 e vai direto ao final
-            if (choice.nextChapter === 0) {
+            // Verifica se o nextChapter é 0 ou se nextEnding está definido para ir direto ao final
+            if (choice.nextChapter === 0 || choice.nextEnding !== undefined) {
+                if (choice.nextEnding !== undefined) {
+                    lastEnt = choice.nextEnding;  // Atualiza o 'ent' para o final especificado
+                }
                 showEnding();  // Vai direto para o final do jogo
             } else {
-                // Cria o botão "Continuar" para seguir para o próximo capítulo ou final
+                // Cria o botão "Continuar" para seguir para o próximo capítulo
                 const continueButton = document.createElement('button');
                 continueButton.innerText = "Continuar";
                 continueButton.onclick = () => {
@@ -176,8 +190,6 @@ function loadChapter(chapterId) {
         choicesDiv.appendChild(button);
     });
 }
-
-
 
 function updateUnlockedEndings() {
     const unlockedEndingsDiv = document.getElementById('unlockedEndings');
@@ -198,6 +210,7 @@ function resetGame() {
     wealth = 50;
     visitedChapters = [];
     currentChapter = 1;
+    lastEnt = null;
 
     document.getElementById('popularity').innerText = popularity;
     document.getElementById('influence').innerText = influence;
