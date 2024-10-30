@@ -1,0 +1,56 @@
+#startButton {
+    background-color: #8b4513;
+    color: white;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+#startButton:hover {
+    background-color: #a0522d;
+}
+
+#choices {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+#choices button {
+    flex: 1;
+    padding: 15px;
+    font-size: 0.8rem;
+    background-color: #8b5e3c;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s, box-shadow 0.2s ease;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#choices button:hover {
+    background-color: #a06842;
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.tab button {
+    padding: 10px 20px;
+    border: 1px solid #d6a02b;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tab button:hover {
+    background-color: #f4f4f4;
+}

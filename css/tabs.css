@@ -1,0 +1,58 @@
+/* Abas de navegação */
+.tab {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.tab button {
+    background-color: transparent;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #6c4a2d;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tab button.active {
+    background-color: #d6a02b;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo do conteúdo das abas */
+.tabcontent {
+    display: none;
+    padding: 20px;
+}
+
+#storyTab, #endingsTab {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+/* Estilo do conteúdo da aba "Finais Desbloqueados" */
+#endingsTab h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #6c4a2d;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+#endingsTab p {
+    font-size: 1.1rem;
+    padding-left: 10px;
+    border-left: 4px solid #d6a02b;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin: 0;
+    margin-bottom: 20px;
+}

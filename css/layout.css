@@ -1,0 +1,154 @@
+/* Container principal do jogo */
+#game {
+    max-width: 900px;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    border: 2px solid #d4a373;
+}
+
+/* Container flex para alinhar imagem e texto */
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+    gap: 30px;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Estilo da imagem */
+#chapterImage {
+    width: 45%;
+    border-radius: 12px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+    object-fit: cover;
+}
+
+/* Barras de progresso */
+/* Estilo geral das labels */
+.stat-label {
+    font-weight: bold;
+    min-width: 210px;
+    font-size: 0.9rem;  /* Aumentar o tamanho da fonte para destaque */
+    color: #6b4f32;  /* Cor mais sofisticada para combinar com o tema */
+    margin-bottom: 5px;  /* Espaçamento abaixo da label */
+    text-transform: uppercase;  /* Transformar o texto em maiúsculas */
+    letter-spacing: 1px;  /* Adicionar espaçamento entre letras para melhor legibilidade */
+    font-family: 'Georgia', serif;  /* Fonte clássica para se adequar ao tema renascentista */
+}
+
+/* Ajuste das labels para melhorar o alinhamento e espaçamento */
+.stats {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.stat-bar {
+    flex: 1;
+    background-color: #e0e0e0;
+    border-radius: 6px;
+    height: 15px;  /* Tornar as barras um pouco mais grossas */
+    margin-left: 10px; /* Adiciona um espaçamento entre o título e a barra */
+}
+
+.stat-bar-inner {
+    height: 100%;
+    border-radius: 6px;
+    transition: width 0.4s ease;
+}
+
+.stat-value {
+    font-size: 1rem;  /* Aumentar o tamanho da fonte dos valores */
+    color: #6b4f32;  /* Mesma cor das labels para manter a consistência */
+    font-weight: bold;
+}
+
+/* Gradiente de cores para barras */
+#popularity-bar .stat-bar-inner {
+    background-color: #8b4513a3;
+}
+
+#influence-bar .stat-bar-inner {
+    background-color: #8b4513a3;
+}
+
+#military-bar .stat-bar-inner {
+    background-color: #8b4513a3;
+}
+
+#wealth-bar .stat-bar-inner {
+    background-color: #8b4513a3;
+}
+
+/* Layout do conteúdo principal */
+#startScreen {
+    text-align: center;
+}
+
+/* Estilo para o fim de jogo */
+#endScreen {
+    width: 90%;
+    max-width: 800px;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.95); /* Transparência leve */
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    overflow-y: auto;
+    max-height: 70vh;
+    margin: 40px auto; /* Centralizar a tela de fim de jogo */
+}
+
+#endScreen h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #8b4513;
+    margin-bottom: 20px;
+}
+
+#endScreen p {
+    font-size: 1.2rem;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+#endScreen ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+#endScreen li {
+    font-size: 1.1rem;
+    padding: 12px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-left: 5px solid #d6a02b;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); /* Leve sombra nas listas */
+}
+
+#endScreen button {
+    background-color: #8b4513;
+    color: white;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+#endScreen button:hover {
+    background-color: #a0522d;
+}

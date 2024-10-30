@@ -25,3 +25,4 @@ function startGame() {
     document.getElementById("tabs").style.display = "block";  // Mostrar as abas do jogo
     document.getElementById("defaultOpen").click();  // Abrir a aba 'História' por padrão
 }
+

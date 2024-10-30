@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A Aventura do Príncipe de Florença</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/buttons.css">
+    <link rel="stylesheet" href="./css/tabs.css">
 </head>
 <body>
     <div id="game">
@@ -13,13 +16,13 @@
         <div id="startScreen">
             <h1 id="gameTitle">A Aventura do Príncipe de Florença</h1>
             <p id="gameDescription">Você é Lorenzo, um jovem príncipe que acaba de assumir o poder de Florença, um pequeno principado no coração da Itália Renascentista.</p>
-            <p id="gameConcepts">A história de Lorenzo é inspirada pelos conceitos centrais da obra 'O Príncipe', de Nicolau Maquiavel. Entre os principais conceitos explorados estão a necessidade de manter o equilíbrio entre ser amado, respeitado e temido, e as decisões que moldarão seu legado como governante.</p>
-            <button id="startButton" onclick="startGame()">Start</button>
+            <p id="gameConcepts">A história de Lorenzo é inspirada pelos conceitos centrais da obra 'O Príncipe', de Nicolau Maquiavel.</p>
+            <button id="startButton" onclick="startGame()">Iniciar Aventura</button>
         </div>
 
-        <!-- Abas de navegação (serão ocultas até o jogo começar) -->
+        <!-- Abas de navegação (ocultas até o jogo começar) -->
         <div id="tabs" style="display: none;">
-            <div class="tab">
+            <div class="tab" >
                 <button class="tablinks" onclick="openTab(event, 'storyTab')" id="defaultOpen">História</button>
                 <button class="tablinks" onclick="openTab(event, 'endingsTab')">Finais Desbloqueados</button>
             </div>
@@ -27,7 +30,6 @@
             <!-- Conteúdo da aba História -->
             <div id="storyTab" class="tabcontent">
                 <div id="status">
-                    <!-- Barras de progresso para as métricas -->
                     <div class="stats">
                         <div class="stat-label">Popularidade:</div>
                         <div id="popularity-bar" class="stat-bar">
@@ -59,13 +61,16 @@
                         </div>
                         <div class="stat-value" id="wealth">50</div>
                     </div>
-                    
                 </div>
 
-                <div id="story">
-                    <h2 id="chapterTitle"></h2>
-                    <p id="chapterText"></p>
-                    <div id="choices"></div>
+                <!-- Conteúdo da história e escolhas -->
+                <div id="story" class="flex-container">
+                    <img id="chapterImage" src="" alt="Imagem do Capítulo" class="chapter-img">
+                    <div>
+                        <h2 id="chapterTitle"></h2>
+                        <p id="chapterText"></p>
+                        <div id="choices"></div>
+                    </div>
                 </div>
             </div>
 
